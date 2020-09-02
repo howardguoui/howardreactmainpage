@@ -58,9 +58,9 @@ const App = () => {
       ],
       work: [
         {
-          company: 'Awesome Design Studio',
-          title: 'Senior UX God ',
-          years: 'March 2010 - Present',
+          company: 'BNY Mellon',
+          title: 'Web UI Developer',
+          years: 'Jan 2020 - Present',
           description:
             'The objective is to provide latest market information regarding advertise, campaign, marketing, stock and business analysis for corporate site such as BNYMellon.com, Pershing.com, microsite and so on',
         },
@@ -115,13 +115,12 @@ const App = () => {
       testimonials: [
         {
           text:
-            'Here you should write some nice things that someone has said about you. No lies though, employers can tell when you are lying.',
-          user: 'Kareem Abdul Jabbar',
+            'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
+          user: 'Martin Fowler',
         },
         {
-          text:
-            "That Tim Baker must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, he may be fresh out of University and have zero on the job experience but I am confident that he will be one of your best developers in no time!",
-          user: 'Steve Wozniak... impersonator',
+          text: 'First, solve the problem. Then, write the code',
+          user: 'John Johnson',
         },
       ],
     },
