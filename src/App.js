@@ -24,7 +24,8 @@ const App = () => {
         state: 'NJ',
         zip: '07307',
       },
-      resumedownload: '',
+      resumedownload:
+        'https://howardguoui.github.io/howardreactmainpage/images/Hao_Guo_Resume.pdf',
       social: [
         {
           name: 'google-plus',
