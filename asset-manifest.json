@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/howardreactmainpage/static/css/main.5f361e03.chunk.css",
-    "main.js": "/howardreactmainpage/static/js/main.a48e6954.chunk.js",
-    "main.js.map": "/howardreactmainpage/static/js/main.a48e6954.chunk.js.map",
+    "main.css": "/howardreactmainpage/static/css/main.5facb584.chunk.css",
+    "main.js": "/howardreactmainpage/static/js/main.ef0d2c46.chunk.js",
+    "main.js.map": "/howardreactmainpage/static/js/main.ef0d2c46.chunk.js.map",
     "runtime-main.js": "/howardreactmainpage/static/js/runtime-main.30999467.js",
     "runtime-main.js.map": "/howardreactmainpage/static/js/runtime-main.30999467.js.map",
-    "static/js/2.763f61cc.chunk.js": "/howardreactmainpage/static/js/2.763f61cc.chunk.js",
-    "static/js/2.763f61cc.chunk.js.map": "/howardreactmainpage/static/js/2.763f61cc.chunk.js.map",
+    "static/js/2.8bb133d2.chunk.js": "/howardreactmainpage/static/js/2.8bb133d2.chunk.js",
+    "static/js/2.8bb133d2.chunk.js.map": "/howardreactmainpage/static/js/2.8bb133d2.chunk.js.map",
     "index.html": "/howardreactmainpage/index.html",
-    "precache-manifest.1f1c696a37803c7bc36347c85b2bccad.js": "/howardreactmainpage/precache-manifest.1f1c696a37803c7bc36347c85b2bccad.js",
+    "precache-manifest.c98557cfdb07414c818e47aaee519bed.js": "/howardreactmainpage/precache-manifest.c98557cfdb07414c818e47aaee519bed.js",
     "service-worker.js": "/howardreactmainpage/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/howardreactmainpage/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.763f61cc.chunk.js.LICENSE.txt": "/howardreactmainpage/static/js/2.763f61cc.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/howardreactmainpage/static/media/logo.5d5d9eef.svg"
+    "static/css/main.5facb584.chunk.css.map": "/howardreactmainpage/static/css/main.5facb584.chunk.css.map",
+    "static/js/2.8bb133d2.chunk.js.LICENSE.txt": "/howardreactmainpage/static/js/2.8bb133d2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.30999467.js",
-    "static/js/2.763f61cc.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.a48e6954.chunk.js"
+    "static/js/2.8bb133d2.chunk.js",
+    "static/css/main.5facb584.chunk.css",
+    "static/js/main.ef0d2c46.chunk.js"
   ]
 }
