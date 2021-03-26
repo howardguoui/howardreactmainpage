@@ -58,11 +58,11 @@ const App = () => {
       ],
       work: [
         {
-          company: 'BNY Mellon',
+          company: 'Bank of America',
           title: 'Web UI Developer',
-          years: 'Jan 2020 - Present',
+          years: 'October 2020 - Present',
           description:
-            'The objective is to provide latest market information regarding advertise, campaign, marketing, stock and business analysis for corporate site such as BNYMellon.com, Pershing.com, microsite and so on',
+            'Quartz, Edge, GBAM',
         },
       ],
       skills: [
@@ -94,6 +94,10 @@ const App = () => {
         {
           name: 'Python',
           level: '50%',
+        },
+        {
+          name: 'Vue',
+          level: '80%',
         },
         {
           name: 'Java',
