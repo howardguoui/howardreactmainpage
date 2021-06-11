@@ -84,8 +84,8 @@ const App = () => {
           level: '90%',
         },
         {
-          name: 'VueJs',
-          level: '50%',
+          name: 'Vue',
+          level: '60%',
         },
         {
           name: 'Angular',
@@ -93,7 +93,7 @@ const App = () => {
         },
         {
           name: 'Python',
-          level: '50%',
+          level: '70%',
         },
         {
           name: 'Vue',
@@ -112,6 +112,12 @@ const App = () => {
           category: 'React Hook application',
           image: 'canadian-wanderlust.jpg',
           url: 'https://howardguoui.github.io/burgerproject/',
+        },
+        {
+          title: 'React Refresh 2021',
+          category: 'React Hook application',
+          image: 'Capture.PNG',
+          url: 'https://howardguoui.github.io/reactrefresh2021/',
         },
       ],
     },
