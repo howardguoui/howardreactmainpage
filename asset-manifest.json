@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/howardreactmainpage/static/css/main.bab0b925.chunk.css",
-    "main.js": "/howardreactmainpage/static/js/main.5e6fd296.chunk.js",
-    "main.js.map": "/howardreactmainpage/static/js/main.5e6fd296.chunk.js.map",
+    "main.js": "/howardreactmainpage/static/js/main.3d3fc415.chunk.js",
+    "main.js.map": "/howardreactmainpage/static/js/main.3d3fc415.chunk.js.map",
     "runtime-main.js": "/howardreactmainpage/static/js/runtime-main.e2ffa9d9.js",
     "runtime-main.js.map": "/howardreactmainpage/static/js/runtime-main.e2ffa9d9.js.map",
     "static/js/2.3a976e4d.chunk.js": "/howardreactmainpage/static/js/2.3a976e4d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.e2ffa9d9.js",
     "static/js/2.3a976e4d.chunk.js",
     "static/css/main.bab0b925.chunk.css",
-    "static/js/main.5e6fd296.chunk.js"
+    "static/js/main.3d3fc415.chunk.js"
   ]
 }
