@@ -19,10 +19,10 @@ const App = () => {
       image: 'profilepic.jpg',
       phone: '919-600-1388',
       address: {
-        street: '208 Cambridge Ave',
-        city: 'Jersey City',
+        street: '264 Riverwalk way',
+        city: 'Clifton',
         state: 'NJ',
-        zip: '07307',
+        zip: '07014',
       },
       resumedownload:
         'https://howardguoui.github.io/howardreactmainpage/images/Hao_Guo_Resume.pdf',
@@ -100,8 +100,8 @@ const App = () => {
           level: '80%',
         },
         {
-          name: 'Java',
-          level: '50%',
+          name: 'Typescript',
+          level: '80%',
         },
       ],
     },
@@ -114,10 +114,10 @@ const App = () => {
           url: 'https://howardguoui.github.io/burgerproject/',
         },
         {
-          title: 'React Refresh 2021',
+          title: 'React Refresh 2022',
           category: 'React Hook application',
           image: 'Capture.PNG',
-          url: 'https://howardguoui.github.io/reactrefresh2021/',
+          url: 'https://howardguoui.github.io/reactrefresh2022/',
         },
       ],
     },
