@@ -60,10 +60,10 @@ const Header = (props) => {
       <div className='row banner'>
         <div className='banner-text'>
           <h1 className='responsive-headline'>
-            Welcome to Howard React Main Page
+            Hi, I&apos;m Howard Guo
           </h1>
           <h3>
-            I like React because of virtual dom, HOC, hook and it's flexibility.
+            Senior UI Developer &mdash; React, TypeScript &amp; Enterprise UI at Bank of America
           </h3>
           <hr />
           <ul className='social'>{networks}</ul>

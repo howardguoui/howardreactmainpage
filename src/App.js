@@ -13,8 +13,8 @@ const App = () => {
     main: {
       name: 'Howard Guo',
       bio:
-        'I love UI, also love react because of virtual dom, hook, hoc and so on',
-      contactmessage: 'Always look for new oppurtunity(TODO Submit)',
+        'Senior UI Developer at Bank of America with 5+ years of experience building enterprise-grade web applications. Passionate about React, TypeScript, and crafting smooth, accessible user interfaces. Also an indie game developer — currently building Pixel Fury, a 2D beat\'em up in Unreal Engine 5.',
+      contactmessage: 'Open to new opportunities and interesting collaborations. Feel free to reach out!',
       email: 'howardguoui@gmail.com',
       image: 'profilepic.jpg',
       phone: '919-600-1388',
@@ -28,25 +28,25 @@ const App = () => {
         'https://howardguoui.github.io/howardreactmainpage/images/Hao_Guo_Resume.pdf',
       social: [
         {
-          name: 'google-plus',
-          url: 'mailto:howardguoui@gmail.com?',
-          className: 'fa fa-google-plus',
+          name: 'email',
+          url: 'mailto:howardguoui@gmail.com',
+          className: 'fas fa-envelope',
         },
         {
           name: 'linkedin',
           url: 'https://www.linkedin.com/in/hao-guo-918690126/',
-          className: 'fa fa-linkedin',
+          className: 'fab fa-linkedin',
         },
         {
           name: 'github',
           url: 'https://github.com/howardguoui',
-          className: 'fa fa-github',
+          className: 'fab fa-github',
         },
       ],
     },
     resume: {
       skillmessage:
-        'Here you can create a short write-up of your skills to show off to employers',
+        'Technologies I work with daily — from frontend frameworks to tooling and beyond.',
       education: [
         {
           school: 'North Carolina Central University',
@@ -62,7 +62,7 @@ const App = () => {
           title: 'Web UI Developer',
           years: 'October 2020 - Present',
           description:
-            'Quartz, Edge, GBAM',
+            'Building enterprise UI components and data visualization tools for GBAM (Global Banking & Markets) using React, TypeScript, and the internal Quartz framework. Delivering high-performance interfaces used by traders and analysts globally.',
         },
       ],
       skills: [
@@ -84,29 +84,41 @@ const App = () => {
           level: '90%',
         },
         {
+          name: 'TypeScript',
+          level: '85%',
+        },
+        {
           name: 'Vue',
-          level: '60%',
+          level: '70%',
         },
         {
           name: 'Angular',
-          level: '80%',
+          level: '75%',
         },
         {
           name: 'Python',
           level: '70%',
         },
         {
-          name: 'Vue',
-          level: '80%',
-        },
-        {
-          name: 'Typescript',
-          level: '80%',
+          name: 'Unreal Engine',
+          level: '55%',
         },
       ],
     },
     portfolio: {
       projects: [
+        {
+          title: 'Screenshotdle',
+          category: 'Daily puzzle — guess the game from a screenshot',
+          image: 'Capture.PNG',
+          url: 'https://howardguoui.github.io/screenshotdle/',
+        },
+        {
+          title: 'Pixel Fury-dle',
+          category: 'Daily puzzle — guess the fighter from pixel art',
+          image: 'canadian-wanderlust.jpg',
+          url: 'https://howardguoui.github.io/pixelfury-dle/',
+        },
         {
           title: 'React Burger',
           category: 'React Hook application',

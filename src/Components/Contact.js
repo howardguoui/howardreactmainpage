@@ -109,25 +109,17 @@ const Contact = (props) => {
           </div>
 
           <div className='widget widget_tweets'>
-            <h4 className='widget-title'>impletmentation for websocket</h4>
+            <h4 className='widget-title'>Current Projects</h4>
             <ul id='twitter'>
               <li>
                 <span>
-                  todo
-                  <a href='#'>http://t.co/CGIrdxIlI3</a>
+                  Building <strong style={{color: '#6c63ff'}}>Pixel Fury</strong> — a 2D beat&apos;em up in Unreal Engine 5 with GAS, Paper2D, and Steam multiplayer.
                 </span>
-                <b>
-                  <a href='#'>2 Days Ago</a>
-                </b>
               </li>
               <li>
                 <span>
-                  todo
-                  <a href='#'>http://t.co/CGIrdxIlI3</a>
+                  Exploring AI-powered tooling and automation with <strong style={{color: '#00d4aa'}}>Claude API</strong> and Python.
                 </span>
-                <b>
-                  <a href='#'>3 Days Ago</a>
-                </b>
               </li>
             </ul>
           </div>

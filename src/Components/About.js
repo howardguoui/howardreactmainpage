@@ -47,8 +47,8 @@ const About = (props) => {
             </div>
             <div className='columns download'>
               <p>
-                <a href={resumeDownload} className='button' target='_blank'>
-                  <i className='fa fa-download'></i>Download Resume
+                <a href={resumeDownload} className='button' target='_blank' rel='noreferrer'>
+                  <i className='fas fa-download'></i>Download Resume
                 </a>
               </p>
             </div>
