@@ -1,19 +1,29 @@
 import React from 'react';
 
 const Portfolio = (props) => {
+  var projects = null;
+
   if (props.data) {
-    var projects = props.data.projects.map(function (projects) {
-      var projectImage = 'images/portfolio/' + projects.image;
+    projects = props.data.projects.map(function (project) {
+      var tags = project.tags
+        ? project.tags.map((tag) => (
+            <span key={tag} className='project-tag'>
+              {tag}
+            </span>
+          ))
+        : null;
+
       return (
-        <div key={projects.title} className='columns portfolio-item'>
+        <div key={project.title} className='portfolio-item'>
           <div className='item-wrap'>
-            <a href={projects.url} title={projects.title} target='_blank'>
-              <img alt={projects.title} src={projectImage} />
-              <div className='overlay'>
-                <div className='portfolio-item-meta'>
-                  <h5>{projects.title}</h5>
-                  <p>{projects.category}</p>
+            <a href={project.url} target='_blank' rel='noreferrer'>
+              <div className='item-content'>
+                <div className='item-header'>
+                  <h5>{project.title}</h5>
+                  <i className='fas fa-external-link-alt'></i>
                 </div>
+                <p className='item-desc'>{project.category}</p>
+                <div className='item-tags'>{tags}</div>
               </div>
             </a>
           </div>
@@ -26,12 +36,8 @@ const Portfolio = (props) => {
     <section id='portfolio'>
       <div className='row'>
         <div className='twelve columns collapsed'>
-          <h1>Check Out Some of My Works.</h1>
-
-          <div
-            id='portfolio-wrapper'
-            className='bgrid-quarters s-bgrid-thirds cf'
-          >
+          <h1>Projects &amp; Work</h1>
+          <div id='portfolio-wrapper' className='portfolio-grid'>
             {projects}
           </div>
         </div>
