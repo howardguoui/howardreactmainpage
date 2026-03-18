@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
@@ -9,37 +9,39 @@ import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
 
 const App = () => {
+  // ─── Theme ───────────────────────────────────────────
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('hg-theme') || 'light';
+    setTheme(saved);
+    document.documentElement.setAttribute('data-theme', saved);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('hg-theme', next);
+  };
+
+  // ─── Data ─────────────────────────────────────────────
   const [resumeData] = useState({
     main: {
       name: 'Howard Guo',
-      roles: ['Senior UI Developer', 'AI Engineer', 'Indie Game Dev'],
+      tagline: 'Senior UI Developer · AI Engineer · Indie Game Dev',
       bio: 'Senior UI Developer at Bank of America building enterprise-grade trading interfaces for GBAM. AI enthusiast crafting LLM-powered tools, Claude agents, and RAG pipelines. Also an indie game developer — building Pixel Fury in Unreal Engine 5.',
       contactmessage:
         "Open to new opportunities at the intersection of frontend and AI. Whether it's trading dashboards, LLM products, or something entirely new — let's build it.",
       email: 'howardguoui@gmail.com',
       image: 'profilepic.jpg',
-      address: {
-        city: 'Jersey City',
-        state: 'NJ',
-      },
+      address: { city: 'Jersey City', state: 'NJ' },
       resumedownload:
         'https://howardguoui.github.io/howardreactmainpage/images/Hao_Guo_Resume.pdf',
       social: [
-        {
-          name: 'email',
-          url: 'mailto:howardguoui@gmail.com',
-          className: 'fas fa-envelope',
-        },
-        {
-          name: 'linkedin',
-          url: 'https://www.linkedin.com/in/hao-guo-918690126/',
-          className: 'fab fa-linkedin',
-        },
-        {
-          name: 'github',
-          url: 'https://github.com/howardguoui',
-          className: 'fab fa-github',
-        },
+        { name: 'email',    url: 'mailto:howardguoui@gmail.com',                      className: 'fas fa-envelope' },
+        { name: 'linkedin', url: 'https://www.linkedin.com/in/hao-guo-918690126/',    className: 'fab fa-linkedin' },
+        { name: 'github',   url: 'https://github.com/howardguoui',                   className: 'fab fa-github'   },
       ],
     },
     resume: {
@@ -94,48 +96,37 @@ const App = () => {
       projects: [
         {
           title: 'PromptVault',
-          category:
-            'Chrome Extension — free AI prompt manager for Claude, ChatGPT, Gemini, Grok & Perplexity',
-          image: 'promptvault.png',
+          category: 'Chrome Extension — free AI prompt manager for Claude, ChatGPT, Gemini, Grok & Perplexity',
           url: 'https://github.com/howardguoui/promptvault-chrome-extension',
           tags: ['JavaScript', 'Chrome Extension', 'AI Tools'],
         },
         {
           title: 'Agent Office',
-          category:
-            'Real-time visualization dashboard for Claude Code agents and multi-agent sessions',
-          image: 'agent-office.png',
+          category: 'Real-time visualization dashboard for Claude Code agents and multi-agent sessions',
           url: 'https://github.com/howardguoui/agent-office',
           tags: ['HTML', 'Claude API', 'Real-time', 'OSS'],
         },
         {
           title: 'LLM Tutorial Hub',
-          category:
-            'Interactive step-by-step guide to large language models with live examples',
-          image: 'llm-tutorial.png',
+          category: 'Interactive step-by-step guide to large language models with live examples',
           url: 'https://github.com/howardguoui/large-language-model-hub',
           tags: ['TypeScript', 'LLM', 'Education'],
         },
         {
           title: 'Algo Visualizer',
-          category:
-            'Interactive algorithm & data structure visualization built with React + TypeScript',
-          image: 'algo-visualizer.png',
+          category: 'Interactive algorithm & data structure visualization built with React + TypeScript',
           url: 'https://github.com/howardguoui/algo-visualizer',
           tags: ['TypeScript', 'React', 'Algorithms'],
         },
         {
           title: 'Screenshotdle',
           category: 'Daily puzzle game — guess the video game from a single screenshot',
-          image: 'Capture.PNG',
           url: 'https://howardguoui.github.io/screenshotdle/',
           tags: ['HTML', 'JavaScript', 'Game'],
         },
         {
           title: 'Pixel Fury',
-          category:
-            "2D beat'em up indie game with GAS, Paper2D, and Steam multiplayer in Unreal Engine 5",
-          image: 'canadian-wanderlust.jpg',
+          category: "2D beat'em up indie game with GAS, Paper2D, and Steam multiplayer in Unreal Engine 5",
           url: 'https://howardguoui.github.io/pixelfury-dle/',
           tags: ['Unreal Engine 5', 'C++', 'Game Dev'],
         },
@@ -157,7 +148,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Header data={resumeData.main} />
+      <Header data={resumeData.main} theme={theme} toggleTheme={toggleTheme} />
       <About data={resumeData.main} />
       <Resume data={resumeData.resume} />
       <Portfolio data={resumeData.portfolio} />
