@@ -1,26 +1,17 @@
 import React from 'react';
 
 const Contact = (props) => {
-  if (props.data) {
-    var name = props.data.name;
-    var street = props.data.address.street;
-    var city = props.data.address.city;
-    var state = props.data.address.state;
-    var zip = props.data.address.zip;
-    var phone = props.data.phone;
-    var email = props.data.email;
-    var message = props.data.contactmessage;
-  }
+  var email   = props.data ? props.data.email   : '';
+  var city    = props.data ? props.data.address.city  : '';
+  var state   = props.data ? props.data.address.state : '';
+  var message = props.data ? props.data.contactmessage : '';
 
   return (
     <section id='contact'>
       <div className='row section-head'>
         <div className='two columns header-col'>
-          <h1>
-            <span>Get In Touch.</span>
-          </h1>
+          <h1><span>Get In Touch.</span></h1>
         </div>
-
         <div className='ten columns'>
           <p className='lead'>{message}</p>
         </div>
@@ -31,94 +22,61 @@ const Contact = (props) => {
           <form action='' method='post' id='contactForm' name='contactForm'>
             <fieldset>
               <div>
-                <label htmlFor='contactName'>
-                  Name <span className='required'>*</span>
-                </label>
-                <input
-                  type='text'
-                  defaultValue=''
-                  size='35'
-                  id='contactName'
-                  name='contactName'
-                />
+                <label htmlFor='contactName'>Name <span className='required'>*</span></label>
+                <input type='text' defaultValue='' id='contactName' name='contactName' />
               </div>
-
               <div>
-                <label htmlFor='contactEmail'>
-                  Email <span className='required'>*</span>
-                </label>
-                <input
-                  type='text'
-                  defaultValue=''
-                  size='35'
-                  id='contactEmail'
-                  name='contactEmail'
-                />
+                <label htmlFor='contactEmail'>Email <span className='required'>*</span></label>
+                <input type='text' defaultValue='' id='contactEmail' name='contactEmail' />
               </div>
-
               <div>
                 <label htmlFor='contactSubject'>Subject</label>
-                <input
-                  type='text'
-                  defaultValue=''
-                  size='35'
-                  id='contactSubject'
-                  name='contactSubject'
-                />
+                <input type='text' defaultValue='' id='contactSubject' name='contactSubject' />
               </div>
-
               <div>
-                <label htmlFor='contactMessage'>
-                  Message <span className='required'>*</span>
-                </label>
-                <textarea
-                  cols='50'
-                  rows='15'
-                  id='contactMessage'
-                  name='contactMessage'
-                ></textarea>
+                <label htmlFor='contactMessage'>Message <span className='required'>*</span></label>
+                <textarea rows='10' id='contactMessage' name='contactMessage'></textarea>
               </div>
-
               <div>
-                <button className='submit'>Submit</button>
+                <button className='submit'>Send Message</button>
                 <span id='image-loader'>
                   <img alt='' src='images/loader.gif' />
                 </span>
               </div>
             </fieldset>
           </form>
-
-          <div id='message-warning'> Error boy</div>
+          <div id='message-warning'>Something went wrong. Please try again.</div>
           <div id='message-success'>
-            <i className='fa fa-check'></i>Your message was sent, thank you!
-            <br />
+            <i className='fa fa-check'></i> Your message was sent — thank you!
           </div>
         </div>
 
         <aside className='four columns footer-widgets'>
           <div className='widget widget_contact'>
-            <h4>Address and Phone</h4>
+            <h4>Direct Contact</h4>
             <p className='address'>
-              {name}
-              <br />
-              {street} <br />
-              {city}, {state} {zip}
-              <br />
-              <span>{phone}</span>
+              <span>Howard Guo</span><br />
+              <span>{city}, {state}</span><br />
+              <span>{email}</span>
             </p>
           </div>
 
           <div className='widget widget_tweets'>
-            <h4 className='widget-title'>Current Projects</h4>
+            <h4 className='widget-title'>Currently Building</h4>
             <ul id='twitter'>
               <li>
                 <span>
-                  Building <strong style={{color: '#6c63ff'}}>Pixel Fury</strong> — a 2D beat&apos;em up in Unreal Engine 5 with GAS, Paper2D, and Steam multiplayer.
+                  Building <strong>LLM-powered tools</strong> with LangChain, RAG pipelines, and Claude API.
                 </span>
               </li>
               <li>
                 <span>
-                  Exploring AI-powered tooling and automation with <strong style={{color: '#00d4aa'}}>Claude API</strong> and Python.
+                  Deep-diving into <strong>Apache Spark</strong> and distributed data pipeline architecture.
+                </span>
+              </li>
+              <li>
+                <span>
+                  Open to opportunities in <strong>Full Stack, LLM Engineering, or Big Data</strong>.
                 </span>
               </li>
             </ul>

@@ -7,6 +7,7 @@ import Resume from './Components/Resume';
 import Contact from './Components/Contact';
 import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
+import AskAI from './Components/AskAI';
 
 const App = () => {
   // ─── Theme ───────────────────────────────────────────
@@ -29,92 +30,95 @@ const App = () => {
   const [resumeData] = useState({
     main: {
       name: 'Howard Guo',
-      tagline: 'Senior UI Developer · AI Engineer · Indie Game Dev',
-      bio: 'Senior UI Developer at Bank of America building enterprise-grade trading interfaces for GBAM. AI enthusiast crafting LLM-powered tools, Claude agents, and RAG pipelines. Also an indie game developer — building Pixel Fury in Unreal Engine 5.',
+      tagline: 'Full Stack Developer · LLM Engineer · Big Data',
+      bio: 'Software engineer with 5+ years building data-intensive platforms at Bank of America, now transitioning into Full Stack, LLM Engineering, and Big Data. M.S. in Mathematics — I bring strong analytical foundations to everything from distributed pipelines to RAG-powered applications.',
       contactmessage:
-        "Open to new opportunities at the intersection of frontend and AI. Whether it's trading dashboards, LLM products, or something entirely new — let's build it.",
+        "Open to roles in Full Stack Engineering, LLM/AI Engineering, or Big Data. I'm at my best when data, algorithms, and great user experience intersect. Let's talk.",
       email: 'howardguoui@gmail.com',
       image: 'profilepic.jpg',
       address: { city: 'Jersey City', state: 'NJ' },
       resumedownload:
         'https://howardguoui.github.io/howardreactmainpage/images/Hao_Guo_Resume.pdf',
       social: [
-        { name: 'email',    url: 'mailto:howardguoui@gmail.com',                      className: 'fas fa-envelope' },
-        { name: 'linkedin', url: 'https://www.linkedin.com/in/hao-guo-918690126/',    className: 'fab fa-linkedin' },
-        { name: 'github',   url: 'https://github.com/howardguoui',                   className: 'fab fa-github'   },
+        { name: 'email',    url: 'mailto:howardguoui@gmail.com',                   className: 'fas fa-envelope' },
+        { name: 'linkedin', url: 'https://www.linkedin.com/in/hao-guo-918690126/', className: 'fab fa-linkedin' },
+        { name: 'github',   url: 'https://github.com/howardguoui',                className: 'fab fa-github'   },
       ],
     },
     resume: {
-      skillmessage:
-        'Technologies I build with — from enterprise UI to AI pipelines and game engines.',
+      skillmessage: 'A growing stack — from full-stack web to LLM pipelines and distributed data systems.',
       education: [
         {
           school: 'North Carolina Central University',
           degree: 'M.S. Mathematics',
           graduated: 'December 2018',
           description:
-            'Focus on algorithms, data structures, big data, and computer vision. Teaching Assistant and scholarship recipient.',
+            'Coursework in algorithms, data structures, big data systems, and computer vision. Teaching Assistant and scholarship recipient. Strong theoretical foundation for data engineering and ML work.',
         },
       ],
       work: [
         {
           company: 'Bank of America',
-          title: 'Senior UI Developer',
+          title: 'Software Engineer (Full Stack)',
           years: 'October 2020 – Present',
           description:
-            'Building enterprise UI components and data visualization tools for GBAM (Global Banking & Markets) using React, TypeScript, and the internal Quartz framework. Delivering high-performance interfaces used by traders and analysts globally.',
+            'Built data visualization and analytics platforms for GBAM (Global Banking & Markets) — serving traders and analysts worldwide. Stack: React, TypeScript, Node.js, REST APIs, and the internal Quartz data framework. Delivered high-performance dashboards processing real-time market data.',
         },
         {
           company: 'AI / Open Source Projects',
-          title: 'Indie AI Developer',
+          title: 'LLM & AI Developer',
           years: '2024 – Present',
           description:
-            'Building AI-powered tools with Claude API, LangChain, and RAG pipelines. Created Agent Office (real-time Claude Code visualizer), PromptVault Chrome Extension (AI prompt manager for Claude, ChatGPT, Gemini & Grok), and a full LLM tutorial hub.',
+            'Building LLM-powered tools: Agent Office (real-time multi-agent visualization for Claude Code), PromptVault (AI prompt manager Chrome extension supporting Claude, ChatGPT, Gemini & Grok), and a full-stack LLM Tutorial Hub. Stack: Python, LangChain, RAG, vector databases, Claude API.',
         },
         {
-          company: 'Pixel Fury Studio',
-          title: 'Indie Game Developer',
-          years: '2023 – Present',
+          company: 'Independent Study',
+          title: 'Big Data Engineering',
+          years: '2025 – Present',
           description:
-            "Solo-developing Pixel Fury — a 2D beat'em up built in Unreal Engine 5 using Paper2D, GAS (Gameplay Ability System), and Steam multiplayer. Responsible for design, art, and all engineering.",
+            'Deep-diving into Big Data engineering: Apache Spark (batch & streaming), distributed systems design, data pipeline architecture, and cloud data platforms. Applying M.S. Math foundations to real-world data engineering problems.',
         },
       ],
       skills: [
-        { name: 'React',              level: '92%' },
-        { name: 'TypeScript',         level: '88%' },
-        { name: 'CSS / Sass',         level: '90%' },
-        { name: 'Vue / Angular',      level: '75%' },
-        { name: 'Python',             level: '72%' },
-        { name: 'Claude API / LLM',   level: '82%' },
-        { name: 'LangChain / RAG',    level: '68%' },
-        { name: 'Prompt Engineering', level: '85%' },
-        { name: 'Unreal Engine 5',    level: '60%' },
-        { name: 'Git / CI/CD',        level: '92%' },
+        { name: 'Python',                  level: '80%' },
+        { name: 'Node.js / REST APIs',     level: '82%' },
+        { name: 'React / TypeScript',      level: '90%' },
+        { name: 'SQL / NoSQL',             level: '75%' },
+        { name: 'LangChain / RAG',         level: '72%' },
+        { name: 'Claude API / LLM',        level: '85%' },
+        { name: 'Apache Spark (Big Data)', level: '55%' },
+        { name: 'Docker / CI/CD',          level: '70%' },
+        { name: 'Prompt Engineering',      level: '87%' },
+        { name: 'Git',                     level: '92%' },
       ],
     },
     portfolio: {
       projects: [
         {
           title: 'PromptVault',
-          category: 'Chrome Extension — free AI prompt manager for Claude, ChatGPT, Gemini, Grok & Perplexity',
+          category:
+            'Chrome Extension — free AI prompt manager for Claude, ChatGPT, Gemini, Grok & Perplexity',
           url: 'https://github.com/howardguoui/promptvault-chrome-extension',
           tags: ['JavaScript', 'Chrome Extension', 'AI Tools'],
         },
         {
           title: 'Agent Office',
-          category: 'Real-time visualization dashboard for Claude Code agents and multi-agent sessions',
+          category:
+            'Real-time visualization dashboard for Claude Code multi-agent sessions',
           url: 'https://github.com/howardguoui/agent-office',
-          tags: ['HTML', 'Claude API', 'Real-time', 'OSS'],
+          tags: ['HTML', 'Claude API', 'Real-time'],
         },
         {
           title: 'LLM Tutorial Hub',
-          category: 'Interactive step-by-step guide to large language models with live examples',
+          category:
+            'Interactive step-by-step guide to large language models — transformers, RAG, fine-tuning',
           url: 'https://github.com/howardguoui/large-language-model-hub',
-          tags: ['TypeScript', 'LLM', 'Education'],
+          tags: ['TypeScript', 'LLM', 'Full Stack'],
         },
         {
           title: 'Algo Visualizer',
-          category: 'Interactive algorithm & data structure visualization built with React + TypeScript',
+          category:
+            'Interactive algorithm & data structure visualization — sorting, graphs, trees',
           url: 'https://github.com/howardguoui/algo-visualizer',
           tags: ['TypeScript', 'React', 'Algorithms'],
         },
@@ -126,7 +130,8 @@ const App = () => {
         },
         {
           title: 'Pixel Fury',
-          category: "2D beat'em up indie game with GAS, Paper2D, and Steam multiplayer in Unreal Engine 5",
+          category:
+            "2D beat'em up indie game with GAS, Paper2D & Steam multiplayer in Unreal Engine 5",
           url: 'https://howardguoui.github.io/pixelfury-dle/',
           tags: ['Unreal Engine 5', 'C++', 'Game Dev'],
         },
@@ -135,12 +140,12 @@ const App = () => {
     testimonials: {
       testimonials: [
         {
-          text: 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
-          user: 'Martin Fowler',
+          text: 'Without big data, you are blind and deaf and in the middle of a freeway.',
+          user: 'Geoffrey Moore',
         },
         {
-          text: 'The most important property of a program is whether it accomplishes the intention of its user.',
-          user: 'C.A.R. Hoare',
+          text: 'The goal is to turn data into information, and information into insight.',
+          user: 'Carly Fiorina',
         },
       ],
     },
@@ -152,6 +157,7 @@ const App = () => {
       <About data={resumeData.main} />
       <Resume data={resumeData.resume} />
       <Portfolio data={resumeData.portfolio} />
+      <AskAI />
       <Testimonials data={resumeData.testimonials} />
       <Contact data={resumeData.main} />
       <Footer data={resumeData.main} />
