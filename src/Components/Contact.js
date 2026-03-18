@@ -52,32 +52,25 @@ const Contact = (props) => {
         </div>
 
         <aside className='four columns footer-widgets'>
-          <div className='widget widget_contact'>
-            <h4>Direct Contact</h4>
-            <p className='address'>
-              <span>Howard Guo</span><br />
-              <span>{city}, {state}</span><br />
-              <span>{email}</span>
-            </p>
-          </div>
-
-          <div className='widget widget_tweets'>
-            <h4 className='widget-title'>Currently Building</h4>
-            <ul id='twitter'>
+          <div className='widget widget_contact contact-card'>
+            <p className='contact-card-name'>Hao Guo</p>
+            <p className='contact-card-title'>AI Engineer</p>
+            <p className='contact-card-avail'>Available for remote roles.</p>
+            <ul className='contact-card-links'>
               <li>
-                <span>
-                  Building <strong>LLM-powered tools</strong> with LangChain, RAG pipelines, and Claude API.
-                </span>
+                <a href={`mailto:${email}`}>
+                  <i className='fas fa-envelope'></i> {email}
+                </a>
               </li>
               <li>
-                <span>
-                  Deep-diving into <strong>Apache Spark</strong> and distributed data pipeline architecture.
-                </span>
+                <a href='https://www.linkedin.com/in/hao-guo-918690126/' target='_blank' rel='noreferrer'>
+                  <i className='fab fa-linkedin'></i> LinkedIn
+                </a>
               </li>
               <li>
-                <span>
-                  Open to opportunities in <strong>Full Stack, LLM Engineering, or Big Data</strong>.
-                </span>
+                <a href='https://howardguoui.github.io/howardreactmainpage/images/Hao_Guo_Resume.pdf' target='_blank' rel='noreferrer'>
+                  <i className='fas fa-file-pdf'></i> Resume (PDF)
+                </a>
               </li>
             </ul>
           </div>
