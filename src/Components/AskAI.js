@@ -89,12 +89,13 @@ const AskAI = () => {
   const [input, setInput]             = useState('');
   const [typingId, setTypingId]       = useState(null);
   const [displayed, setDisplayed]     = useState({ [initId]: GREETING });
-  const bottomRef                     = useRef(null);
+  const messagesRef                   = useRef(null);
 
-  // Auto-scroll to latest message
+  // Scroll INSIDE the chat box only — fires once per new message, not per character
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, displayed]);
+    const el = messagesRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [messages]);
 
   // Typewriter effect
   const typewrite = (id, fullText) => {
@@ -162,7 +163,7 @@ const AskAI = () => {
           <div className='askai-window'>
 
             {/* Messages */}
-            <div className='askai-messages'>
+            <div className='askai-messages' ref={messagesRef}>
               {messages.map(msg => (
                 <div key={msg.id} className={`askai-msg askai-msg--${msg.role}`}>
                   {msg.role === 'ai' && (
@@ -181,7 +182,6 @@ const AskAI = () => {
                   )}
                 </div>
               ))}
-              <div ref={bottomRef} />
             </div>
 
             {/* Quick-question chips */}
