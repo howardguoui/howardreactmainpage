@@ -1,75 +1,100 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ROW_1 = [
-  { icon: 'fab fa-python',      label: 'Python'              },
-  { icon: 'fas fa-brain',       label: 'LangChain'           },
-  { icon: 'fas fa-robot',       label: 'Claude API'          },
-  { icon: 'fas fa-database',    label: 'RAG / Vector DB'     },
-  { icon: 'fab fa-react',       label: 'React'               },
-  { icon: 'fas fa-code',        label: 'TypeScript'          },
-  { icon: 'fab fa-node-js',     label: 'Node.js'             },
-  { icon: 'fas fa-plug',        label: 'REST APIs'           },
-  { icon: 'fas fa-microchip',   label: 'LLM Engineering'     },
-  { icon: 'fas fa-terminal',    label: 'Prompt Engineering'  },
+/* Tokens shown as both row (query) and column (key) headers */
+const TOKENS = ['model', 'learns', 'from', 'large', 'text', 'data'];
+
+/*
+ * Attention weights per query token (rows).
+ * Each row sums to ~1 and peaks on the diagonal (self-attention).
+ */
+const WEIGHTS = [
+  [0.82, 0.07, 0.04, 0.03, 0.02, 0.02], // "model"  attends most to itself
+  [0.06, 0.79, 0.08, 0.04, 0.02, 0.01], // "learns"
+  [0.03, 0.09, 0.74, 0.08, 0.04, 0.02], // "from"
+  [0.04, 0.05, 0.10, 0.71, 0.07, 0.03], // "large"
+  [0.02, 0.03, 0.06, 0.09, 0.73, 0.07], // "text"
+  [0.02, 0.02, 0.04, 0.05, 0.12, 0.75], // "data"
 ];
 
-const ROW_2 = [
-  { icon: 'fas fa-fire',           label: 'Apache Spark'        },
-  { icon: 'fas fa-network-wired',  label: 'Distributed Systems' },
-  { icon: 'fas fa-layer-group',    label: 'Embeddings'          },
-  { icon: 'fab fa-docker',         label: 'Docker'              },
-  { icon: 'fas fa-infinity',       label: 'CI / CD'             },
-  { icon: 'fas fa-chart-bar',      label: 'NumPy / Pandas'      },
-  { icon: 'fas fa-leaf',           label: 'MongoDB'             },
-  { icon: 'fas fa-database',       label: 'PostgreSQL'          },
-  { icon: 'fab fa-git-alt',        label: 'Git'                 },
-  { icon: 'fas fa-cube',           label: 'Fine-tuning'         },
-];
+const Testimonials = () => {
+  const [activeRow, setActiveRow] = useState(0);
 
-/* Duplicate each row so the loop is seamless */
-const r1 = [...ROW_1, ...ROW_1];
-const r2 = [...ROW_2, ...ROW_2];
+  useEffect(() => {
+    const id = setInterval(
+      () => setActiveRow(r => (r + 1) % TOKENS.length),
+      1800
+    );
+    return () => clearInterval(id);
+  }, []);
 
-const Testimonials = () => (
-  <section id='testimonials'>
-    <div className='marquee-section'>
+  return (
+    <section id='testimonials'>
+      <div className='attn-section'>
 
-      {/* Label */}
-      <div className='marquee-label'>
-        <span className='marquee-dot'></span>
-        Tech Stack &amp; Tools
-      </div>
-
-      {/* Row 1 — scrolls left */}
-      <div className='marquee-track-wrap'>
-        <div className='marquee-fade-left'></div>
-        <div className='marquee-fade-right'></div>
-        <div className='marquee-track marquee-track--left'>
-          {r1.map((item, i) => (
-            <div key={i} className='marquee-item'>
-              <i className={item.icon}></i>
-              <span>{item.label}</span>
-            </div>
-          ))}
+        {/* Header */}
+        <div className='attn-badge'>
+          <span className='attn-dot'></span>
+          Self-Attention · Transformer Core
         </div>
-      </div>
+        <h3 className='attn-title'>How AI Models Understand Language</h3>
+        <p className='attn-sub'>
+          Every token weighs its relationship to every other token — simultaneously,
+          in parallel. The highlighted row shows which tokens the current query attends&nbsp;to.
+        </p>
 
-      {/* Row 2 — scrolls right */}
-      <div className='marquee-track-wrap'>
-        <div className='marquee-fade-left'></div>
-        <div className='marquee-fade-right'></div>
-        <div className='marquee-track marquee-track--right'>
-          {r2.map((item, i) => (
-            <div key={i} className='marquee-item'>
-              <i className={item.icon}></i>
-              <span>{item.label}</span>
-            </div>
-          ))}
+        {/* Matrix */}
+        <div className='attn-matrix-wrap'>
+          <div className='attn-matrix'>
+
+            {/* Top-left corner spacer */}
+            <div className='attn-corner' />
+
+            {/* Column headers (key tokens) */}
+            {TOKENS.map((t, j) => (
+              <div
+                key={`col-${j}`}
+                className={`attn-col-label${activeRow === j ? ' attn-label--active' : ''}`}
+              >
+                {t}
+              </div>
+            ))}
+
+            {/* Rows */}
+            {TOKENS.map((rowToken, i) => (
+              <React.Fragment key={`row-${i}`}>
+                {/* Row header (query token) */}
+                <div className={`attn-row-label${activeRow === i ? ' attn-label--active' : ''}`}>
+                  {rowToken}
+                </div>
+                {/* Cells */}
+                {WEIGHTS[i].map((w, j) => (
+                  <div
+                    key={`${i}-${j}`}
+                    className={`attn-cell${activeRow === i ? ' attn-cell--active' : ''}`}
+                    style={{ '--w': w }}
+                    title={`${(w * 100).toFixed(0)}%`}
+                  />
+                ))}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* Legend */}
+          <div className='attn-legend'>
+            <span className='attn-legend-label'>Low</span>
+            <div className='attn-legend-bar' />
+            <span className='attn-legend-label'>High attention</span>
+          </div>
         </div>
-      </div>
 
-    </div>
-  </section>
-);
+        {/* Query label */}
+        <p className='attn-query-label'>
+          Query: <strong>&ldquo;{TOKENS[activeRow]}&rdquo;</strong> attends to all tokens
+        </p>
+
+      </div>
+    </section>
+  );
+};
 
 export default Testimonials;

@@ -584,6 +584,12 @@ section:nth-child(even) { background: var(--bg-2) !important; }
 }
 
 /* ===== PORTFOLIO ===== */
+/* Kill float so the column is a true block centered by the row's margin:auto */
+#portfolio .twelve.columns {
+  float: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
 #portfolio h1 {
   font-size: clamp(1.8rem, 4vw, 2.4rem) !important;
   font-weight: 800 !important;
@@ -668,107 +674,176 @@ section:nth-child(even) { background: var(--bg-2) !important; }
   font-family: 'Space Grotesk', sans-serif !important;
 }
 
-/* ===== TECH MARQUEE (replaces Testimonials) ===== */
+/* ===== SELF-ATTENTION MATRIX (Transformer visualization) ===== */
 #testimonials {
   background: var(--bg-2) !important;
-  padding: 72px 0 !important;
-  overflow: hidden !important;
+  padding: 80px 0 !important;
 }
 
-.marquee-section { width: 100% !important; }
-
-.marquee-label {
+.attn-section {
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
   text-align: center !important;
-  display: flex !important;
+}
+
+/* Badge */
+.attn-badge {
+  display: inline-flex !important;
   align-items: center !important;
-  justify-content: center !important;
   gap: 8px !important;
+  background: var(--accent-dim) !important;
+  border: 1px solid rgba(99,102,241,0.25) !important;
+  color: var(--accent) !important;
   font-family: 'Space Grotesk', sans-serif !important;
   font-size: 13px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  color: var(--accent) !important;
-  margin-bottom: 40px !important;
+  padding: 6px 16px !important;
+  border-radius: 100px !important;
+  margin-bottom: 24px !important;
 }
-.marquee-dot {
-  width: 8px !important;
-  height: 8px !important;
+.attn-dot {
+  width: 8px !important; height: 8px !important;
   background: var(--accent) !important;
   border-radius: 50% !important;
   animation: dotPulse 2s ease infinite !important;
+  flex-shrink: 0 !important;
 }
 
-.marquee-track-wrap {
-  position: relative !important;
-  overflow: hidden !important;
-  margin-bottom: 16px !important;
+/* Heading + sub */
+.attn-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  color: var(--text) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 14px !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+.attn-sub {
+  color: var(--text-muted) !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 40px !important;
 }
 
-/* Fade edges */
-.marquee-fade-left,
-.marquee-fade-right {
-  position: absolute !important;
-  top: 0 !important; bottom: 0 !important;
-  width: 140px !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-}
-.marquee-fade-left  { left: 0;  background: linear-gradient(to right, var(--bg-2), transparent) !important; }
-.marquee-fade-right { right: 0; background: linear-gradient(to left,  var(--bg-2), transparent) !important; }
-
-.marquee-track {
+/* Matrix container */
+.attn-matrix-wrap {
   display: flex !important;
-  gap: 14px !important;
-  width: max-content !important;
-  padding: 6px 0 !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 16px !important;
 }
-.marquee-track--left  { animation: marqueeLeft  32s linear infinite !important; }
-.marquee-track--right { animation: marqueeRight 32s linear infinite !important; }
-.marquee-track:hover  { animation-play-state: paused !important; }
 
-.marquee-item {
+/*
+ * CSS Grid: 1 label column + 6 data columns
+ * 7 total columns (corner + 6 col-headers)
+ * Then 6 rows of: 1 row-label + 6 cells
+ */
+.attn-matrix {
+  display: grid !important;
+  grid-template-columns: 56px repeat(6, 1fr) !important;
+  gap: 5px !important;
+  width: 100% !important;
+}
+
+.attn-corner { /* empty top-left */ }
+
+/* Column / row headers */
+.attn-col-label,
+.attn-row-label {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--text-muted) !important;
+  transition: color 0.4s ease, background 0.4s ease !important;
+  border-radius: 6px !important;
+  padding: 4px 2px !important;
+}
+.attn-col-label { text-align: center !important; }
+.attn-row-label {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  background: var(--surface) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius) !important;
-  padding: 12px 22px !important;
+  justify-content: flex-end !important;
+  padding-right: 8px !important;
   white-space: nowrap !important;
-  transition: var(--t) !important;
-  box-shadow: var(--shadow) !important;
-  cursor: default !important;
 }
-.marquee-item:hover {
-  border-color: var(--accent) !important;
+.attn-label--active {
+  color: var(--accent) !important;
   background: var(--accent-dim) !important;
-  transform: translateY(-3px) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-.marquee-item i    { color: var(--accent) !important; font-size: 18px !important; }
-.marquee-item span {
-  color: var(--text) !important;
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
 }
 
-@keyframes marqueeLeft  {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Attention cells */
+.attn-cell {
+  height: 44px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--border) !important;
+  /* Dim all non-active rows: multiply weight by 0.18 for faint heatmap */
+  background: rgba(99, 102, 241, calc(var(--w) * 0.18)) !important;
+  transition: background 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s ease !important;
+  cursor: default !important;
 }
-@keyframes marqueeRight {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+/* Active row: full-brightness heatmap */
+.attn-cell--active {
+  background: rgba(99, 102, 241, calc(var(--w) * 0.9)) !important;
+  border-color: rgba(99, 102, 241, calc(var(--w) * 0.6)) !important;
+}
+
+/* Legend */
+.attn-legend {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.attn-legend-label {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+}
+.attn-legend-bar {
+  width: 110px !important;
+  height: 8px !important;
+  border-radius: 4px !important;
+  background: linear-gradient(
+    to right,
+    rgba(99,102,241,0.08),
+    rgba(99,102,241,0.9)
+  ) !important;
+}
+
+/* "Query: X attends to all tokens" label */
+.attn-query-label {
+  font-size: 15px !important;
+  color: var(--text-muted) !important;
+  margin-top: 8px !important;
+}
+.attn-query-label strong {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
 }
 
 /* ===== CONTACT ===== */
+/* Match portfolio: kill float, full row width, no extra padding */
+#contact .twelve.columns {
+  float: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
 .contact-hero {
   text-align: center !important;
-  max-width: 760px !important;
-  margin: 0 auto !important;
-  padding: 0 24px !important;
+  width: 100% !important;
+}
+/* Constrain only the text so it stays readable at large widths */
+.contact-badge,
+.contact-heading,
+.contact-sub {
+  max-width: 640px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Availability badge */
