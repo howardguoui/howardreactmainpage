@@ -2,13 +2,14 @@
 
 export const profile = {
   name: 'Howard Guo',
-  role: 'Full-stack engineer building data platforms and LLM tools',
+  role: 'AI/ML engineer: retrieval, evaluation, and LLM serving',
   intro:
-    '5+ years building data-intensive platforms at Bank of America, now moving ' +
-    'into full-stack, LLM, and big data engineering. My M.S. in Mathematics gives ' +
-    'me strong analytical foundations, from distributed pipelines to RAG applications.',
+    '9+ years building Python services and React applications in finance, including ' +
+    'Bank of America. I now build AI systems end to end: hybrid-search RAG with ' +
+    'measured evaluations, open models served and benchmarked on my own GPU, and ' +
+    'agent tooling over MCP. M.S. in Mathematics.',
   location: 'Jersey City, NJ',
-  status: 'Open to full-stack, LLM engineering, and data engineering roles',
+  status: 'Open to AI engineer, ML engineer, and MLOps roles',
   email: 'howardguoui@gmail.com',
   photo: 'images/profilepic.jpg',
   resume: 'images/Hao_Guo_Resume.pdf',
@@ -30,6 +31,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: 'Filings RAG',
+    summary:
+      'Ask questions about SEC 10-K filings and get answers cited to the exact section. ' +
+      'Hybrid pgvector and full-text search fused with Reciprocal Rank Fusion, ' +
+      'cross-encoder reranking, and an evaluation suite with retrieval metrics and RAGAS.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL + pgvector', 'RAGAS', 'Claude API', 'Docker'],
+    code: 'https://github.com/howardguoui/filings-rag',
+  },
+  {
+    name: 'Local Inference Lab',
+    summary:
+      'Serving open LLMs on one 16 GB GPU: plans KV cache and layer offload before ' +
+      'launch, benchmarks vLLM, llama.cpp, and Ollama under load with GPU telemetry, ' +
+      'and exposes it all to agents through an MCP server.',
+    stack: ['vLLM', 'llama.cpp', 'CUDA', 'Prometheus', 'FastMCP', 'Docker'],
+    code: 'https://github.com/howardguoui/local-inference-lab',
+  },
+  {
     name: 'Agent Office',
     summary:
       'Watch Claude Code agents work in real time. Hook events stream over a ' +
@@ -42,8 +61,9 @@ export const projects: Project[] = [
     name: 'AI Video Factory',
     summary:
       'Translates and dubs videos on one local GPU: speech recognition, LLM ' +
-      'translation, voice-cloned narration, and subtitle or MP3 export.',
-    stack: ['Next.js', 'FastAPI', 'faster-whisper', 'Qwen3-TTS', 'FFmpeg'],
+      'translation, and voice-cloned narration, queued through Celery, with a ' +
+      'quality benchmark on Google FLEURS.',
+    stack: ['FastAPI', 'Celery', 'faster-whisper', 'Qwen3-TTS', 'FFmpeg', 'Next.js'],
     code: 'https://github.com/howardguoui/AI-video-factory',
   },
   {
@@ -78,8 +98,9 @@ export const experience: Role[] = [
     org: 'Independent projects',
     dates: '2024 – present',
     detail:
-      'Agent Office, AI Video Factory, and a bilingual learning hub. Python, ' +
-      'LangChain, RAG, vector databases, MCP, and the Claude API.',
+      'Filings RAG, Local Inference Lab, AI Video Factory, and Agent Office: RAG ' +
+      'with pgvector and RAGAS evaluation, vLLM and llama.cpp serving, MCP servers, ' +
+      'and the Claude API.',
   },
   {
     title: 'Big data engineering',
@@ -102,7 +123,8 @@ export const experience: Role[] = [
 export const skills: { group: string; items: string[] }[] = [
   { group: 'Frontend', items: ['React', 'TypeScript', 'Data visualization', 'Tailwind CSS'] },
   { group: 'Backend', items: ['Node.js', 'Python', 'REST APIs', 'FastAPI'] },
-  { group: 'AI & LLM', items: ['Claude API', 'LangChain', 'RAG', 'Vector databases', 'MCP', 'Prompt engineering'] },
+  { group: 'AI & LLM', items: ['RAG', 'pgvector', 'RAGAS evaluation', 'MCP', 'Claude API', 'LangChain', 'Prompt engineering'] },
+  { group: 'LLM serving', items: ['vLLM', 'llama.cpp', 'Ollama', 'CUDA', 'Prometheus metrics'] },
   { group: 'Data', items: ['SQL & NoSQL', 'pandas & NumPy', 'Apache Spark (learning)'] },
   { group: 'Tooling', items: ['Git', 'Docker', 'CI/CD'] },
 ]
@@ -110,7 +132,7 @@ export const skills: { group: string; items: string[] }[] = [
 export const faq: { q: string; a: string }[] = [
   {
     q: 'What roles are you looking for?',
-    a: 'Full-stack engineering, LLM/AI engineering, or data engineering. I do my best work where data, algorithms, and a good user experience meet.',
+    a: 'AI engineer, ML engineer, or MLOps roles: building LLM applications, retrieval and evaluation, and serving models in production. My full-stack background means I can ship the whole system, not just the model call.',
   },
   {
     q: 'What did you build at Bank of America?',
@@ -118,7 +140,7 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: 'How much LLM experience do you have?',
-    a: 'I build LLM applications with LangChain, RAG pipelines, vector databases, MCP, and the Claude API. Agent Office and AI Video Factory are public examples.',
+    a: 'Filings RAG is a public example of retrieval and evaluation (pgvector hybrid search, reranking, RAGAS), and Local Inference Lab of serving open models with vLLM and llama.cpp on my own GPU. Both are on GitHub with tests and CI.',
   },
   {
     q: 'Where are you with big data?',
