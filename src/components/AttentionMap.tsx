@@ -2,24 +2,23 @@ import { useEffect, useState } from 'react'
 
 // Self-attention over the one-line pitch. Rows are queries, columns are keys;
 // each row sums to 1. Weights are hand-tuned for illustration.
-const TOKENS = ['I', 'build', 'tools', 'that', 'make', 'data', 'legible']
+const TOKENS = ['I', 'build', 'and', 'measure', 'LLM', 'systems']
 const WEIGHTS = [
-  [0.46, 0.24, 0.12, 0.03, 0.05, 0.05, 0.05],
-  [0.18, 0.34, 0.3, 0.03, 0.06, 0.05, 0.04],
-  [0.06, 0.3, 0.32, 0.08, 0.08, 0.1, 0.06],
-  [0.03, 0.05, 0.38, 0.24, 0.18, 0.06, 0.06],
-  [0.04, 0.1, 0.18, 0.06, 0.28, 0.14, 0.2],
-  [0.02, 0.06, 0.16, 0.03, 0.12, 0.38, 0.23],
-  [0.03, 0.05, 0.1, 0.03, 0.22, 0.33, 0.24],
+  [0.5, 0.22, 0.06, 0.1, 0.06, 0.06],
+  [0.16, 0.36, 0.08, 0.1, 0.12, 0.18],
+  [0.06, 0.3, 0.22, 0.3, 0.06, 0.06],
+  [0.05, 0.14, 0.1, 0.35, 0.16, 0.2],
+  [0.03, 0.1, 0.03, 0.16, 0.36, 0.32],
+  [0.03, 0.14, 0.04, 0.12, 0.37, 0.3],
 ]
-const MAX = 0.46
+const MAX = 0.5
 
 function prefersReducedMotion() {
   return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
 export function AttentionMap() {
-  const [active, setActive] = useState(5) // start on "data"
+  const [active, setActive] = useState(4) // start on "LLM"
   const [touched, setTouched] = useState(false)
 
   // Gently step through the rows until the visitor takes over.

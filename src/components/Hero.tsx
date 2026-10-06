@@ -36,13 +36,15 @@ export function Hero() {
               <MailIcon />
               Email me
             </a>
-            <a
-              href={`${base}${profile.resume}`}
-              className="inline-flex items-center gap-2 rounded-md border border-line bg-surface px-4 py-2.5 font-medium text-ink no-underline transition-colors hover:border-muted"
-            >
-              <FileIcon />
-              Resume (PDF)
-            </a>
+            {profile.resume && (
+              <a
+                href={`${base}${profile.resume}`}
+                className="inline-flex items-center gap-2 rounded-md border border-line bg-surface px-4 py-2.5 font-medium text-ink no-underline transition-colors hover:border-muted"
+              >
+                <FileIcon />
+                Resume (PDF)
+              </a>
+            )}
             <span className="flex items-center gap-1">
               <a
                 href={profile.links.github}

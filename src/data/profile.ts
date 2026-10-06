@@ -2,17 +2,18 @@
 
 export const profile = {
   name: 'Howard Guo',
-  role: 'AI/ML engineer: retrieval, evaluation, and LLM serving',
+  role: 'AI engineer: LLM applications and inference',
   intro:
-    '9+ years building Python services and React applications in finance, including ' +
-    'Bank of America. I now build AI systems end to end: hybrid-search RAG with ' +
-    'measured evaluations, open models served and benchmarked on my own GPU, and ' +
-    'agent tooling over MCP. M.S. in Mathematics.',
+    '9+ years building data-heavy applications for Bank of America, BNY Mellon, and ' +
+    'ADP. I now build and evaluate generative AI systems end to end: RAG with measured ' +
+    'evaluations, open models served and benchmarked on my own GPU, and agent tooling ' +
+    'over MCP. M.S. in Mathematics.',
   location: 'Jersey City, NJ',
   status: 'Open to AI engineer, ML engineer, and MLOps roles',
   email: 'howardguoui@gmail.com',
   photo: 'images/profilepic.jpg',
-  resume: 'images/Hao_Guo_Resume.pdf',
+  // Add the PDF to public/images and set this to show the Resume buttons again.
+  resume: undefined as string | undefined,
   links: {
     github: 'https://github.com/howardguoui',
     linkedin: 'https://www.linkedin.com/in/hao-guo-918690126/',
@@ -103,12 +104,24 @@ export const experience: Role[] = [
       'and the Claude API.',
   },
   {
-    title: 'Big data engineering',
-    org: 'Independent study',
-    dates: '2025 – present',
+    title: 'Web UI Developer',
+    org: 'BNY Mellon',
+    dates: '2020',
+    detail: 'Pages and Adobe Experience Manager (AEM 6.5) content workflows for BNYmellon.com and Pershing.com with React and Java.',
+  },
+  {
+    title: 'Web UI Developer, GBAM Risk Strategy',
+    org: 'Bank of America',
+    dates: 'Oct 2018 – Jan 2020',
     detail:
-      'Apache Spark (batch and streaming), distributed systems design, data pipeline ' +
-      'architecture, and cloud data platforms.',
+      'Python Flask services on Quartz, the bank\'s cross-asset pricing and risk platform, and ' +
+      'regulatory and trade-metrics reporting for 300+ internal users.',
+  },
+  {
+    title: 'Web UI Developer',
+    org: 'ADP',
+    dates: 'Jan 2017 – Oct 2018',
+    detail: 'Migrated the Global Cloud Connect data-integration UI from AngularJS 1.5 to Angular 6 and TypeScript.',
   },
   {
     title: 'M.S. Mathematics',
@@ -123,9 +136,9 @@ export const experience: Role[] = [
 export const skills: { group: string; items: string[] }[] = [
   { group: 'Frontend', items: ['React', 'TypeScript', 'Data visualization', 'Tailwind CSS'] },
   { group: 'Backend', items: ['Node.js', 'Python', 'REST APIs', 'FastAPI'] },
-  { group: 'AI & LLM', items: ['RAG', 'pgvector', 'RAGAS evaluation', 'MCP', 'Claude API', 'LangChain', 'Prompt engineering'] },
+  { group: 'AI & LLM', items: ['RAG', 'LLM evaluation (RAGAS)', 'Embeddings', 'MCP', 'Claude API', 'Prompt engineering'] },
   { group: 'LLM serving', items: ['vLLM', 'llama.cpp', 'Ollama', 'CUDA', 'Prometheus metrics'] },
-  { group: 'Data', items: ['SQL & NoSQL', 'pandas & NumPy', 'Apache Spark (learning)'] },
+  { group: 'Data', items: ['PostgreSQL + pgvector', 'SQL & NoSQL', 'pandas & NumPy'] },
   { group: 'Tooling', items: ['Git', 'Docker', 'CI/CD'] },
 ]
 
@@ -141,9 +154,5 @@ export const faq: { q: string; a: string }[] = [
   {
     q: 'How much LLM experience do you have?',
     a: 'Filings RAG is a public example of retrieval and evaluation (pgvector hybrid search, reranking, RAGAS), and Local Inference Lab of serving open models with vLLM and llama.cpp on my own GPU. Both are on GitHub with tests and CI.',
-  },
-  {
-    q: 'Where are you with big data?',
-    a: 'I am learning Apache Spark, distributed data processing, and pipeline architecture. My M.S. in Mathematics (algorithms, statistics, computer vision) gives me a strong theoretical base for it.',
   },
 ]

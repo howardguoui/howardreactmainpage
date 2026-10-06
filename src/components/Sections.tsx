@@ -174,11 +174,13 @@ export function Contact() {
             <GitHubIcon /> GitHub
           </a>
         </li>
-        <li>
-          <a href={`${base}${profile.resume}`} className="text-link inline-flex items-center gap-2">
-            <FileIcon /> Resume (PDF)
-          </a>
-        </li>
+        {profile.resume && (
+          <li>
+            <a href={`${base}${profile.resume}`} className="text-link inline-flex items-center gap-2">
+              <FileIcon /> Resume (PDF)
+            </a>
+          </li>
+        )}
       </ul>
     </Section>
   )
