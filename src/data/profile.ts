@@ -90,9 +90,10 @@ export const experience: Role[] = [
     org: 'Bank of America',
     dates: 'Oct 2020 – present',
     detail:
-      'Data visualization and analytics platforms for Global Banking & Markets, used ' +
-      'by traders and analysts worldwide. Real-time market dashboards in React, ' +
-      'TypeScript, Node.js, REST APIs, and the internal Quartz framework.',
+      'Lead AI-driven diagnostics and remediation for enterprise device enrollment ' +
+      'services: pattern detection, anomaly analysis, and generative AI that cut manual ' +
+      'investigation and speed root-cause analysis. Also real-time market data dashboards ' +
+      'for Global Banking & Markets in React and TypeScript.',
   },
   {
     title: 'LLM & AI developer',
@@ -149,10 +150,10 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: 'What did you build at Bank of America?',
-    a: 'Data visualization and analytics platforms for Global Banking & Markets: high-performance dashboards over real-time market data, used by traders and analysts worldwide.',
+    a: 'I lead AI-driven diagnostics and remediation for enterprise device enrollment services, working with engineering and product teams on AI-powered issue triage. I have also built real-time market data dashboards for Global Banking & Markets and, earlier, Python services on the bank\'s pricing and risk platform.',
   },
   {
     q: 'How much LLM experience do you have?',
-    a: 'Filings RAG is a public example of retrieval and evaluation (pgvector hybrid search, reranking, RAGAS), and Local Inference Lab of serving open models with vLLM and llama.cpp on my own GPU. Both are on GitHub with tests and CI.',
+    a: 'At work I lead AI-driven diagnostics and remediation for device enrollment. Outside work, Filings RAG is a public example of retrieval and evaluation (pgvector hybrid search, reranking, RAGAS), and Local Inference Lab of serving open models with vLLM and llama.cpp on my own GPU. Both are on GitHub with tests and CI.',
   },
 ]
