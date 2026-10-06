@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans-condensed/500.css";
+@import "@fontsource/ibm-plex-sans-condensed/600.css";
+
+/* ── Design tokens ──────────────────────────────────────────────────────────
+   Ink navy + paper, a blue heat ramp (the attention map), one amber signal
+   used only for "live / active" states and keyboard focus. */
+:root {
+  --paper: #fafbfc;
+  --surface: #ffffff;
+  --ink: #13213b;
+  --muted: #566173;
+  --line: #dde3ea;
+  --signal: #d99a1b;
+  --signal-text: #8a5a00;
+  --heat-0: #e6eef7;
+  --heat-1: #1f5fa8;
+  --link: #1f5fa8;
+  --on-heat: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper: #0f1a2e;
+  --surface: #15223a;
+  --ink: #e8edf4;
+  --muted: #a3aebd;
+  --line: #26354f;
+  --signal: #f0b43c;
+  --signal-text: #f0b43c;
+  --heat-0: #1a2a44;
+  --heat-1: #6fa8e8;
+  --link: #8dbcf0;
+  --on-heat: #0f1a2e;
+  color-scheme: dark;
+}
+
+/* No-JS fallback: follow the system setting */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --paper: #0f1a2e;
+    --surface: #15223a;
+    --ink: #e8edf4;
+    --muted: #a3aebd;
+    --line: #26354f;
+    --signal: #f0b43c;
+    --signal-text: #f0b43c;
+    --heat-0: #1a2a44;
+    --heat-1: #6fa8e8;
+    --link: #8dbcf0;
+    --on-heat: #0f1a2e;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-signal: var(--signal);
+  --color-signal-text: var(--signal-text);
+  --color-link: var(--link);
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-cond: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--signal);
+  color: #13213b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Text links inside prose */
+.text-link {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.text-link:hover { text-decoration-thickness: 2px; }
+
+/* FAQ disclosure marker */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }

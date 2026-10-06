@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#13213b"/>
+  <!-- 3x3 attention grid, brightest on the diagonal -->
+  <g transform="translate(14 14)">
+    <rect x="0"  y="0"  width="10" height="10" rx="2" fill="#6fa8e8"/>
+    <rect x="13" y="0"  width="10" height="10" rx="2" fill="#2b4a74"/>
+    <rect x="26" y="0"  width="10" height="10" rx="2" fill="#1f3556"/>
+    <rect x="0"  y="13" width="10" height="10" rx="2" fill="#2b4a74"/>
+    <rect x="13" y="13" width="10" height="10" rx="2" fill="#f0b43c"/>
+    <rect x="26" y="13" width="10" height="10" rx="2" fill="#2b4a74"/>
+    <rect x="0"  y="26" width="10" height="10" rx="2" fill="#1f3556"/>
+    <rect x="13" y="26" width="10" height="10" rx="2" fill="#2b4a74"/>
+    <rect x="26" y="26" width="10" height="10" rx="2" fill="#6fa8e8"/>
+  </g>
+</svg>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Howard Guo, full-stack and LLM engineer</title>
+    <meta
+      name="description"
+      content="Howard Guo builds data platforms and LLM tools: 5+ years of trading dashboards at Bank of America, open-source AI projects, and an M.S. in Mathematics."
+    />
+    <link rel="canonical" href="https://howardguoui.github.io/howardreactmainpage/" />
+    <link rel="icon" type="image/svg+xml" href="/howardreactmainpage/favicon.svg" />
+    <meta name="theme-color" content="#13213b" />
+
+    <!-- Link previews (LinkedIn, Slack, X) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Howard Guo, full-stack and LLM engineer" />
+    <meta
+      property="og:description"
+      content="Data platforms at Bank of America, open-source LLM tools, M.S. Mathematics."
+    />
+    <meta property="og:url" content="https://howardguoui.github.io/howardreactmainpage/" />
+    <meta property="og:image" content="https://howardguoui.github.io/howardreactmainpage/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Howard Guo",
+        "jobTitle": "Software Engineer",
+        "url": "https://howardguoui.github.io/howardreactmainpage/",
+        "email": "mailto:howardguoui@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Jersey City", "addressRegion": "NJ" },
+        "alumniOf": "North Carolina Central University",
+        "sameAs": ["https://github.com/howardguoui", "https://www.linkedin.com/in/hao-guo-918690126/"]
+      }
+    </script>
+
+    <!-- Set the theme before first paint so there is no light/dark flash -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('hg-theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:1.5rem;font-family:system-ui">
+        Howard Guo, full-stack and LLM engineer. Email
+        <a href="mailto:howardguoui@gmail.com">howardguoui@gmail.com</a> or see
+        <a href="https://github.com/howardguoui">GitHub</a>.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
