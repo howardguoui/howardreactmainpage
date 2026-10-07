@@ -53,6 +53,17 @@ export const projects: Project[] = [
     code: 'https://github.com/howardguoui/local-inference-lab',
   },
   {
+    name: 'Workflow Copilot',
+    summary:
+      'Write an agent workflow as an Obsidian note and get a chatbot: steps, linked tools, ' +
+      'and rules compile into a Microsoft Agent Framework agent served through the ' +
+      'Microsoft 365 Agents SDK. The demo page also runs it in the browser on a small ' +
+      'open model with WebLLM, next to recorded Qwen3 8B runs.',
+    stack: ['Microsoft Agent Framework', 'M365 Agents SDK', 'Ollama', 'WebLLM', 'Python', 'JavaScript'],
+    live: 'https://howardguoui.github.io/workflow-copilot/',
+    code: 'https://github.com/howardguoui/workflow-copilot',
+  },
+  {
     name: 'Agent Office',
     summary:
       'Watch Claude Code agents work in real time. Hook events stream over a ' +
@@ -103,9 +114,9 @@ export const experience: Role[] = [
     org: 'Independent projects',
     dates: '2024 – present',
     detail:
-      'Filings RAG, Local Inference Lab, AI Video Factory, and Agent Office: RAG ' +
-      'with pgvector and RAGAS evaluation, vLLM and llama.cpp serving, MCP servers, ' +
-      'and the Claude API.',
+      'Filings RAG, Local Inference Lab, Workflow Copilot, AI Video Factory, and Agent ' +
+      'Office: RAG with pgvector and RAGAS evaluation, vLLM and llama.cpp serving, ' +
+      'Microsoft Agent Framework agents, MCP servers, and the Claude API.',
   },
   {
     title: 'Software Engineer',
