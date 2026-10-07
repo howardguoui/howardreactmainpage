@@ -123,7 +123,7 @@ export const experience: Role[] = [
   {
     title: 'Software Engineer',
     org: 'ADP',
-    dates: 'Jan 2017 – Oct 2018',
+    dates: 'Jan 2017 – Sep 2018',
     detail: 'Migrated the Global Cloud Connect data-integration application from AngularJS 1.5 to Angular 6 and TypeScript.',
   },
   {
