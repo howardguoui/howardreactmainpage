@@ -1,9 +1,9 @@
 {
-  "name": "howardreactmainpage",
+  "name": "howardguoui.github.io",
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "homepage": "https://howardguoui.github.io/howardreactmainpage/",
+  "homepage": "https://howardguoui.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

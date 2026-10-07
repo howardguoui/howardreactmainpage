@@ -1,19 +1,19 @@
-# howardreactmainpage
+# howardguoui.github.io
 
-Howard Guo's personal site: https://howardguoui.github.io/howardreactmainpage/
+Howard Guo's personal site: https://howardguoui.github.io/
 
 React 19 + TypeScript + Vite + Tailwind CSS v4. IBM Plex is self-hosted through Fontsource.
 
 ## Edit the content
 
 Everything the page says (intro, projects, experience, skills, questions, links) lives in
-`src/data/profile.ts`. The resume PDF and photo are in `public/images/`.
+`src/data/profile.ts`. The resume PDF is `public/Hao_Guo_Resume.pdf`; the photo is in `public/images/`.
 
 ## Run and deploy
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173/howardreactmainpage/
+npm run dev      # http://localhost:5173/
 npm run lint
 npm run build    # type-check + production build into dist/
 npm run deploy   # builds, then publishes dist/ to the gh-pages branch

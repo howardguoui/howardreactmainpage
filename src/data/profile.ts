@@ -4,16 +4,16 @@ export const profile = {
   name: 'Howard Guo',
   role: 'AI engineer: LLM applications and inference',
   intro:
-    '9+ years building data-heavy applications for Bank of America, BNY Mellon, and ' +
-    'ADP. I now build and evaluate generative AI systems end to end: RAG with measured ' +
-    'evaluations, open models served and benchmarked on my own GPU, and agent tooling ' +
-    'over MCP. M.S. in Mathematics.',
+    'Vice President and software engineer at Bank of America with 9+ years building ' +
+    'data-heavy applications. I lead AI-driven diagnostics at work, and build and measure ' +
+    'generative AI systems end to end: RAG with measured evaluations, open models served ' +
+    'and benchmarked on my own GPU, and agent tooling over MCP. M.S. in Mathematics.',
   location: 'Jersey City, NJ',
   status: 'Open to AI engineer, ML engineer, and MLOps roles',
   email: 'howardguoui@gmail.com',
   photo: 'images/profilepic.jpg',
-  // Add the PDF to public/images and set this to show the Resume buttons again.
-  resume: undefined as string | undefined,
+  // PDF in public/; set to undefined to hide the Resume buttons.
+  resume: 'Hao_Guo_Resume.pdf' as string | undefined,
   links: {
     github: 'https://github.com/howardguoui',
     linkedin: 'https://www.linkedin.com/in/hao-guo-918690126/',
@@ -36,8 +36,9 @@ export const projects: Project[] = [
     summary:
       'Ask questions about SEC 10-K filings and get answers cited to the exact section. ' +
       'Hybrid pgvector and full-text search fused with Reciprocal Rank Fusion, ' +
-      'cross-encoder reranking, and an evaluation suite with retrieval metrics and RAGAS.',
+      'cross-encoder reranking, and a RAGAS evaluation: 97% faithfulness, 84% hit rate@6.',
     stack: ['Python', 'FastAPI', 'PostgreSQL + pgvector', 'RAGAS', 'Claude API', 'Docker'],
+    live: 'https://howardguoui.github.io/filings-rag/',
     code: 'https://github.com/howardguoui/filings-rag',
   },
   {
@@ -86,14 +87,14 @@ export interface Role {
 
 export const experience: Role[] = [
   {
-    title: 'Software Engineer, Full Stack',
+    title: 'Vice President, Software Engineer',
     org: 'Bank of America',
-    dates: 'Oct 2020 – present',
+    dates: 'Oct 2020 – Present',
     detail:
       'Lead AI-driven diagnostics and remediation for enterprise device enrollment ' +
-      'services: pattern detection, anomaly analysis, and generative AI that cut manual ' +
-      'investigation and speed root-cause analysis. Also real-time market data dashboards ' +
-      'for Global Banking & Markets in React and TypeScript.',
+      'services, cutting weekly manual investigation by 25%, with AI-powered ticket triage ' +
+      'and automatic Jira creation. Also real-time market data dashboards for a Global ' +
+      'Banking & Markets trading platform in React and TypeScript.',
   },
   {
     title: 'LLM & AI developer',
@@ -105,32 +106,33 @@ export const experience: Role[] = [
       'and the Claude API.',
   },
   {
-    title: 'Web UI Developer',
+    title: 'Software Engineer',
     org: 'BNY Mellon',
-    dates: '2020',
-    detail: 'Pages and Adobe Experience Manager (AEM 6.5) content workflows for BNYmellon.com and Pershing.com with React and Java.',
+    dates: 'Mar 2020 – Sep 2020',
+    detail: 'React and Java features and Adobe Experience Manager (AEM 6.5) content workflows for BNYmellon.com and Pershing.com.',
   },
   {
-    title: 'Web UI Developer, GBAM Risk Strategy',
+    title: 'Software Engineer, GBAM Risk Strategy',
     org: 'Bank of America',
     dates: 'Oct 2018 – Jan 2020',
     detail:
-      'Python Flask services on Quartz, the bank\'s cross-asset pricing and risk platform, and ' +
-      'regulatory and trade-metrics reporting for 300+ internal users.',
+      'Reporting applications for risk executives\' credit reporting, Python Flask services on ' +
+      'Quartz, the bank\'s cross-asset pricing and risk platform, and regulatory and ' +
+      'trade-metrics reporting for 300+ internal users.',
   },
   {
-    title: 'Web UI Developer',
+    title: 'Software Engineer',
     org: 'ADP',
     dates: 'Jan 2017 – Oct 2018',
-    detail: 'Migrated the Global Cloud Connect data-integration UI from AngularJS 1.5 to Angular 6 and TypeScript.',
+    detail: 'Migrated the Global Cloud Connect data-integration application from AngularJS 1.5 to Angular 6 and TypeScript.',
   },
   {
-    title: 'M.S. Mathematics',
+    title: 'M.S. Mathematics (Computer Science concentration)',
     org: 'North Carolina Central University',
     dates: 'Graduated Dec 2018',
     detail:
-      'Algorithms, data structures, big data systems, and computer vision. Teaching ' +
-      'assistant and scholarship recipient.',
+      'Algorithms, data structures, big data systems, and computer vision. Research ' +
+      'assistant on scholarship, and teaching assistant.',
   },
 ]
 

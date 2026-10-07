@@ -25,7 +25,7 @@ export default function App() {
           <p>© {new Date().getFullYear()} Howard Guo</p>
           <p>
             Built with React and Vite.{' '}
-            <a href="https://github.com/howardguoui/howardreactmainpage" className="text-link">
+            <a href="https://github.com/howardguoui/howardguoui.github.io" className="text-link">
               Source on GitHub
             </a>
           </p>
