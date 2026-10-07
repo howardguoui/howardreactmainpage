@@ -46,8 +46,10 @@ export const projects: Project[] = [
     summary:
       'Serving open LLMs on one 16 GB GPU: plans KV cache and layer offload before ' +
       'launch, benchmarks vLLM, llama.cpp, and Ollama under load with GPU telemetry, ' +
-      'and exposes it all to agents through an MCP server.',
+      'and exposes it all to agents through an MCP server. At 16 users vLLM served 1,210 ' +
+      'tokens/s vs 99 for Ollama.',
     stack: ['vLLM', 'llama.cpp', 'CUDA', 'Prometheus', 'FastMCP', 'Docker'],
+    live: 'https://howardguoui.github.io/local-inference-lab/',
     code: 'https://github.com/howardguoui/local-inference-lab',
   },
   {
