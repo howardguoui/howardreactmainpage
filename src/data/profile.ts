@@ -108,7 +108,7 @@ export const experience: Role[] = [
   {
     title: 'Software Engineer',
     org: 'BNY Mellon',
-    dates: 'Mar 2020 – Sep 2020',
+    dates: 'Jan 2020 – Oct 2020',
     detail: 'React and Java features and Adobe Experience Manager (AEM 6.5) content workflows for BNYmellon.com and Pershing.com.',
   },
   {
